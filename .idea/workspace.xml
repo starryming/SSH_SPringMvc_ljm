@@ -6,38 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa04e1af-fe20-4691-94e0-5081f20478ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/learn/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/properties/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/infrastructure.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/infrastructure.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learn/entity/LeaveEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learn/entity/LeaveEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learn/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learn/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/infrastructure.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/infrastructure.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/entity/LeaveEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/entity/LeaveEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/classes/infrastructure.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/classes/infrastructure.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/commons-logging-1.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-aop-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-beans-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-context-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-core-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-expression-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-jdbc-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-orm-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-tx-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-web-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/spring-webmvc-4.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/spring-dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/spring-dispatcher-servlet.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fa04e1af-fe20-4691-94e0-5081f20478ca" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -280,8 +249,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="299">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -564,7 +533,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="ca37af26-8a85-487a-b342-d70dd42513e7" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536572679457" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536573754860" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -712,7 +681,7 @@
       <workItem from="1536398671288" duration="2322000" />
       <workItem from="1536478440863" duration="8748000" />
       <workItem from="1536542784308" duration="942000" />
-      <workItem from="1536548036031" duration="16024000" />
+      <workItem from="1536548036031" duration="16772000" />
     </task>
     <task id="LOCAL-00001" summary="责任链模式实现请假">
       <created>1536031432833</created>
@@ -725,7 +694,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121447000" />
+    <option name="totallyTimeSpent" value="122195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1141,8 +1110,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="299">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
