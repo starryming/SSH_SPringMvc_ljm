@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.learn.entity.UserEntity;
 import com.learn.service.UserService;
 import com.learn.utils.MD5Util;
+import com.learn.utils.PageBeanUtil;
 import com.learn.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -29,18 +31,37 @@ public class UserController {
     public String getUser() {
         //创建一个JSONObject，用于json输出
         JSONObject jsonObject = new JSONObject();
-       if(userService.getAllUser() != null){
-           jsonObject.put("data",JSONObject.toJSON(userService.getAllUser()));
+        List<UserEntity> allUserEntityList = userService.getAllUser();
+        if(allUserEntityList != null){
+           jsonObject.put("data",JSONObject.toJSON(allUserEntityList));
            jsonObject.put("msg",JSONObject.toJSON("true"));
            return jsonObject.toJSONString();
-       }else{
-           jsonObject.put("data",JSONObject.toJSON("无数据！"));
+        }else{
+           jsonObject.put("data",JSONObject.toJSON("数据为空！"));
            jsonObject.put("msg",JSONObject.toJSON("false"));
            return jsonObject.toJSONString();
-       }
+        }
     }
 
-    //映射一个action
+    //分页显示
+    @RequestMapping(value = "/getUserByPageId/{pageId}",method = RequestMethod.GET)
+    @ResponseBody//表示直接输出返回内容，不进行jsp或html跳转
+    public String getUserByPageId(@PathVariable(value = "pageId") int pageId) {
+        //创建一个JSONObject，用于json输出
+        JSONObject jsonObject = new JSONObject();
+        PageBeanUtil<UserEntity> pageBeanUtilList = userService.queryForPage(5,pageId);
+        System.out.println("取到数量："+pageBeanUtilList.getList().size());
+        if(pageBeanUtilList.getList().size() != 0){
+            jsonObject.put("data",JSONObject.toJSON(pageBeanUtilList));
+            jsonObject.put("msg",JSONObject.toJSON("true"));
+            return jsonObject.toJSONString();
+        }else{
+            jsonObject.put("data",JSONObject.toJSON("页数超出，无数据！"));
+            jsonObject.put("msg",JSONObject.toJSON("false"));
+            return jsonObject.toJSONString();
+        }
+    }
+
     @RequestMapping(value = "/getOne/{uid}",method = RequestMethod.GET)
     @ResponseBody//表示直接输出返回内容，不进行jsp或html跳转
     public String getUserByUid(@PathVariable(value = "uid") int id) {
@@ -79,11 +100,11 @@ public class UserController {
             System.out.println("session_uid:"+httpSession.getAttribute("uid"));
 
             jsonObject.put("data",JSONObject.toJSON("登陆成功！"));
-            jsonObject.put("msg",JSONObject.toJSON("true"));
+            jsonObject.put("msgs",JSONObject.toJSON("true"));
             return jsonObject.toJSONString();
         }else{
             jsonObject.put("data",JSONObject.toJSON("登陆失败！"));
-            jsonObject.put("msg",JSONObject.toJSON("false"));
+            jsonObject.put("msgs",JSONObject.toJSON("false"));
             return jsonObject.toJSONString();
         }
     }
@@ -141,6 +162,4 @@ public class UserController {
             return jsonObject.toJSONString();
         }
     }
-
-
 }

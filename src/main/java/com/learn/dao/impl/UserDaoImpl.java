@@ -1,9 +1,11 @@
 package com.learn.dao.impl;
 
+import com.learn.dao.Support.MyDaoSupport;
 import com.learn.dao.UserDao;
 import com.learn.entity.UserEntity;
 import com.vdurmont.emoji.EmojiParser;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends MyDaoSupport implements UserDao {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -75,8 +77,39 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    /**
+     * 分页查询
+     *
+     * @param hql    查询条件
+     * @param offset 开始记录
+     * @param length 一次查询几条记录
+     * @return 查询的记录集合
+     */
+    @Override
+    public List<UserEntity> queryForPage(String hql, int offset, int length) {
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setFirstResult(offset);
+        query.setMaxResults(length);
+        List<UserEntity> userEntityList = query.list();
 
-    /** 测试Java-Enjoy方法
+        System.out.println(userEntityList.size());
+
+        return userEntityList;
+    }
+
+    /**
+     * 查询所有的记录数
+     *
+     * @param hql 查询条件
+     * @return 总记录数
+     */
+    @Override
+    public int getAllRowCount(String hql) {
+        return this.getHibernateTemplate().find(hql).size();
+    }
+
+
+    /** 测试Java-Emoji方法
      * @param str
      */
     public void testEnjoy(String str){

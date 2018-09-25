@@ -2,6 +2,7 @@ package com.learn.dao.impl;
 
 import com.learn.dao.ImgIconDao;
 import com.learn.entity.ImgiconEntity;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,6 +32,7 @@ public class ImgIconDaoImpl implements ImgIconDao {
 
     @Override
     public List<ImgiconEntity> getAll() {
-        return null;
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(ImgiconEntity.class);
+        return criteria.list();
     }
 }

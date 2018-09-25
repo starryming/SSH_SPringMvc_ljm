@@ -1,5 +1,7 @@
 package com.learn.controller;
 
+import com.learn.entity.ImgiconEntity;
+import com.learn.service.ImgIconService;
 import com.learn.service.ThumbNailService;
 import com.learn.service.UploadImgService;
 import com.learn.utils.ImgList;
@@ -29,6 +31,8 @@ public class ImgIconController {
     private UploadImgService upload;
     @Autowired
     private ThumbNailService thumbnail;
+    @Autowired
+    private ImgIconService imgIconService;
 
     //文件上传并生成缩略图
     @RequestMapping(value="/thumb",method= RequestMethod.POST)
@@ -36,12 +40,20 @@ public class ImgIconController {
     {
         //根据相对路径获取绝对路径，图片上传后位于元数据中
         String realUploadPath=request.getSession().getServletContext().getRealPath("/")+"images";
+        System.out.println(realUploadPath);
 
         //获取上传后原图的相对地址
         String imageUrl=upload.uploadImg(file, realUploadPath);
+        System.out.println(imageUrl);
 
         //获取生成的缩略图的相对地址
         String thumbImageUrl=thumbnail.generateThumbnail(file, realUploadPath);
+        System.out.println(thumbImageUrl);
+
+        ImgiconEntity imgiconEntity = new ImgiconEntity();
+        imgiconEntity.setImg(file.getOriginalFilename());
+        imgIconService.add(imgiconEntity);
+
         return "redirect:/images";
     }
 
@@ -53,7 +65,15 @@ public class ImgIconController {
         //根据相对路径获取绝对路径，图片上传后位于元数据中
         List<String> rawImagesList=new ArrayList<String>();
         String realUploadPath=request.getSession().getServletContext().getRealPath("/")+"images";
-        rawImagesList= ImgList.printFile(realUploadPath+"/rawImages");
+        System.out.println(realUploadPath);
+
+        //rawImagesList = ImgList.printFile(realUploadPath+"/rawImages");
+        List<ImgiconEntity> imgiconEntityList = imgIconService.getAll();
+        System.out.println(imgiconEntityList);
+        for(ImgiconEntity imgiconEntity : imgiconEntityList){
+            rawImagesList.add(imgiconEntity.getImg());
+        }
+        System.out.println(rawImagesList);
 
         ModelAndView mv=new ModelAndView();
         mv.addObject("imageList", rawImagesList);

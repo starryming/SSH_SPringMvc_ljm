@@ -1,12 +1,15 @@
 package com.learn.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
 @Table(name = "user", schema = "ordersystemssh")
-public class UserEntity {
+public class UserEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private int uid;
     private String username;
     private String password;
@@ -17,7 +20,9 @@ public class UserEntity {
     private int leaveDay;
     private String reason;
     private UsercardEntity usercardEntity;
+    private ImgiconEntity imgiconEntity;
     private List<LeaveEntity> leaveEntityList;
+    private RoleEntity roleEntity;
 
     @Id
     @Column(name = "uid", nullable = false)
@@ -119,6 +124,8 @@ public class UserEntity {
         this.usercardEntity = usercardEntity;
     }
 
+    @Basic
+    @Column(name = "leaveDay", nullable = true)
     public int getLeaveDay() {
         return leaveDay;
     }
@@ -127,6 +134,8 @@ public class UserEntity {
         this.leaveDay = leaveDay;
     }
 
+    @Basic
+    @Column(name = "reason", nullable = true, length = 255)
     public String getReason() {
         return reason;
     }
@@ -143,5 +152,25 @@ public class UserEntity {
 
     public void setLeaveEntityList(List<LeaveEntity> leaveEntityList) {
         this.leaveEntityList = leaveEntityList;
+    }
+
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "icon_id")
+    public ImgiconEntity getImgiconEntity() {
+        return imgiconEntity;
+    }
+
+    public void setImgiconEntity(ImgiconEntity imgiconEntity) {
+        this.imgiconEntity = imgiconEntity;
+    }
+
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id")
+    public RoleEntity getRoleEntity() {
+        return roleEntity;
+    }
+
+    public void setRoleEntity(RoleEntity roleEntity) {
+        this.roleEntity = roleEntity;
     }
 }

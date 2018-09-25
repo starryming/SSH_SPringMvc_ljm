@@ -19,7 +19,6 @@ public class ImgList {
                     images.add(readfile.getName());
                 }
             }
-
         }
         return images;
     }
