@@ -23,6 +23,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public boolean update(UserEntity u) {
+        return userDao.update(u);
+    }
+
     public List<UserEntity> getAllUser() {
         return userDao.findAll();
     }
@@ -32,7 +37,7 @@ public class UserServiceImpl implements UserService {
         return userDao.getUserByUid(id);
     }
 
-    public int login(UserEntity user) {
+    public UserEntity login(UserEntity user) {
         return userDao.login(user);
     }
 
@@ -54,7 +59,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public PageBeanUtil<UserEntity> queryForPage(int pageSize, int page) {
-        final String hql = "from UserEntity user order by user.uid"; //查询语句
+        final String hql = "from UserEntity user order by user.createtime"; //查询语句
         int allRow = userDao.getAllRowCount(hql);  //总记录数
         int totalPage = PageBeanUtil.countTatalPage(pageSize, allRow); //总页数
         final int offset = PageBeanUtil.countOffset(pageSize, page); //当前页开始记录

@@ -7,15 +7,11 @@ import com.learn.utils.MD5Util;
 import com.learn.utils.PageBeanUtil;
 import com.learn.utils.VerifyCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -90,16 +86,16 @@ public class UserController {
         JSONObject jsonObject = new JSONObject();
         user.setPassword(MD5Util.getMD5(user.getPassword()));
         //登陆时 同时获取uid 为了存入session
-        int uid = userService.login(user);
-        if(uid != 0){
+        UserEntity userEntity = userService.login(user);
+        if(userEntity != null){
             System.out.println("session:"+httpSession.getId());
             httpSession.setAttribute("username", user.getUsername());
-            httpSession.setAttribute("uid", uid);
+            httpSession.setAttribute("uid", userEntity.getUid());
 
             System.out.println("session_username:"+httpSession.getAttribute("username"));
             System.out.println("session_uid:"+httpSession.getAttribute("uid"));
 
-            jsonObject.put("data",JSONObject.toJSON("登陆成功！"));
+            jsonObject.put("data",JSONObject.toJSON(userEntity));
             jsonObject.put("msgs",JSONObject.toJSON("true"));
             return jsonObject.toJSONString();
         }else{
@@ -143,6 +139,21 @@ public class UserController {
             return jsonObject.toJSONString();
         }else{
             jsonObject.put("data",JSONObject.toJSON("注册失败！"));
+            jsonObject.put("msg",JSONObject.toJSON("false"));
+            return jsonObject.toJSONString();
+        }
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.PUT)
+    @ResponseBody
+    public String updateUser(@RequestBody UserEntity userEntity){
+        JSONObject jsonObject = new JSONObject();
+        if (userService.update(userEntity)){
+            jsonObject.put("data",JSONObject.toJSON("更新成功！"));
+            jsonObject.put("msg",JSONObject.toJSON("true"));
+            return jsonObject.toJSONString();
+        }else{
+            jsonObject.put("data",JSONObject.toJSON("更新失败！"));
             jsonObject.put("msg",JSONObject.toJSON("false"));
             return jsonObject.toJSONString();
         }

@@ -1,5 +1,9 @@
 package com.learn.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -7,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user", schema = "ordersystemssh")
+@JsonIgnoreProperties(value={"usercard"})
 public class UserEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -19,9 +24,15 @@ public class UserEntity implements Serializable {
 
     private int leaveDay;
     private String reason;
+
+    /*FastJson toString过滤指定的对象属性*/
+    @JSONField(serialize=false)
     private UsercardEntity usercardEntity;
     private ImgiconEntity imgiconEntity;
+
+    @JSONField(serialize=false)
     private List<LeaveEntity> leaveEntityList;
+
     private RoleEntity roleEntity;
 
     @Id
@@ -172,5 +183,23 @@ public class UserEntity implements Serializable {
 
     public void setRoleEntity(RoleEntity roleEntity) {
         this.roleEntity = roleEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "uid=" + uid +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phonenum='" + phonenum + '\'' +
+                ", email='" + email + '\'' +
+                ", createtime=" + createtime +
+                ", leaveDay=" + leaveDay +
+                ", reason='" + reason + '\'' +
+                ", usercardEntity=" + usercardEntity +
+                ", imgiconEntity=" + imgiconEntity +
+                ", leaveEntityList=" + leaveEntityList +
+                ", roleEntity=" + roleEntity +
+                '}';
     }
 }

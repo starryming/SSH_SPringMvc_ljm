@@ -7,10 +7,13 @@ import java.util.List;
 
 public interface UserService {
     void saveUsers(List<UserEntity> us);
+
+    boolean update(UserEntity u);
+
     List<UserEntity> getAllUser();
     List<UserEntity> getUserByUid(int id);
 
-    int login(UserEntity user);
+    UserEntity login(UserEntity user);
     boolean Register(UserEntity user);
     boolean Delete(int id);
 

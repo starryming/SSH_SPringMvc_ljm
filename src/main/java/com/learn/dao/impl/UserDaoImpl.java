@@ -3,14 +3,18 @@ package com.learn.dao.impl;
 import com.learn.dao.Support.MyDaoSupport;
 import com.learn.dao.UserDao;
 import com.learn.entity.UserEntity;
+import com.learn.utils.MD5Util;
 import com.vdurmont.emoji.EmojiParser;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import java.rmi.AccessException;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -21,7 +25,28 @@ public class UserDaoImpl extends MyDaoSupport implements UserDao {
     private SessionFactory sessionFactory;
 
     public int save(UserEntity u) {
+        u.setUsername(EmojiParser.parseToAliases(u.getUsername()));
+        u.setPassword(MD5Util.getMD5(u.getPassword()));
         return (Integer) sessionFactory.getCurrentSession().save(u);
+    }
+
+    @Override
+    public boolean update(UserEntity u) {
+        u.setUsername(EmojiParser.parseToAliases(u.getUsername()));
+        u.setPassword(MD5Util.getMD5(u.getPassword()));
+        String hql = "update UserEntity u set u.username = ?, u.password = ?, u.phonenum = ?, u.email = ? where u.uid = ?";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setParameter(0, u.getUsername());
+        query.setParameter(1, u.getPassword());
+        query.setParameter(2, u.getPhonenum());
+        query.setParameter(3, u.getEmail());
+        query.setParameter(4,u.getUid());
+        System.out.println(query.toString());
+        if(query.executeUpdate() != 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public List<UserEntity> findAll() {
@@ -36,7 +61,7 @@ public class UserDaoImpl extends MyDaoSupport implements UserDao {
         return criteria.list();
     }
 
-    public int login(UserEntity user) {
+    public UserEntity login(UserEntity user) {
         String str = user.getUsername();
         this.testEnjoy(str);
         user.setUsername(EmojiParser.parseToAliases(str));
@@ -47,9 +72,9 @@ public class UserDaoImpl extends MyDaoSupport implements UserDao {
         if (userentity.size() != 0){
             UserEntity temp = (UserEntity) userentity.get(0);
             System.out.println("Uid获取:"+temp.getUid());
-            return  temp.getUid();
+            return  temp;
         }else{
-            return 0;
+            return null;
         }
     }
 

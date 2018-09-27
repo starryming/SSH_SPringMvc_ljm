@@ -37,6 +37,7 @@ public class UserCardDaoImpl implements UserCardDao {
         System.out.println("looksql:"+query.toString());
         if(query.executeUpdate() != 0){
             session.getTransaction().commit();
+            session.close();
             return true;
         } else {
             return false;

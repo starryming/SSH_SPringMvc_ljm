@@ -7,6 +7,12 @@ import java.util.List;
 public interface UserDao {
     int save(UserEntity u);
 
+    /**
+     * @param userEntity
+     * @return boolean
+     */
+    boolean update(UserEntity userEntity);
+
     /** 获取所有用户
      * @return
      */
@@ -18,7 +24,7 @@ public interface UserDao {
      */
     List<UserEntity> getUserByUid(int id);
 
-    int login(UserEntity user);
+    UserEntity login(UserEntity user);
     boolean Register(UserEntity user);
 
     /** 通过Uid 删除用户

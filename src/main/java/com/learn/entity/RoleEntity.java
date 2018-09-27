@@ -11,6 +11,7 @@ public class RoleEntity implements Serializable {
 
     private int roleId;
     private String role;
+//    private List<UserEntity> userEntityList = new ArrayList<UserEntity>();
 
     @Id
     @Column(name = "role_id", nullable = false)
@@ -24,7 +25,7 @@ public class RoleEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "role", nullable = true, length = 5)
+    @Column(name = "role", nullable = true, length = 25)
     public String getRole() {
         return role;
     }
@@ -46,4 +47,24 @@ public class RoleEntity implements Serializable {
     public int hashCode() {
         return Objects.hash(roleId, role);
     }
+
+    @Override
+    public String toString() {
+        return "RoleEntity{" +
+                "roleId=" + roleId +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    /*mappedBy表示声明自己不是一对多的关系维护端，由对方来维护，是在一的一方进行声明的。mappedBy的值应该为一的一方的表名。
+    hibernate多对一关联映射出现的java.lang.StackOverFlowError问题:https://blog.csdn.net/wuguidian1114/article/details/80657789
+    */
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "roleEntity")
+//    public List<UserEntity> getUserEntityList() {
+//        return userEntityList;
+//    }
+//
+//    public void setUserEntityList(List<UserEntity> userEntityList) {
+//        this.userEntityList = userEntityList;
+//    }
 }
