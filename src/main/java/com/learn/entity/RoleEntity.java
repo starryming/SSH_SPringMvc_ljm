@@ -1,7 +1,11 @@
 package com.learn.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,7 +15,9 @@ public class RoleEntity implements Serializable {
 
     private int roleId;
     private String role;
-//    private List<UserEntity> userEntityList = new ArrayList<UserEntity>();
+
+    @JSONField(serialize=false)
+    private List<UserEntity> userEntityList = new ArrayList<UserEntity>();
 
     @Id
     @Column(name = "role_id", nullable = false)
@@ -59,12 +65,12 @@ public class RoleEntity implements Serializable {
     /*mappedBy表示声明自己不是一对多的关系维护端，由对方来维护，是在一的一方进行声明的。mappedBy的值应该为一的一方的表名。
     hibernate多对一关联映射出现的java.lang.StackOverFlowError问题:https://blog.csdn.net/wuguidian1114/article/details/80657789
     */
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "roleEntity")
-//    public List<UserEntity> getUserEntityList() {
-//        return userEntityList;
-//    }
-//
-//    public void setUserEntityList(List<UserEntity> userEntityList) {
-//        this.userEntityList = userEntityList;
-//    }
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "roleEntity")
+    public List<UserEntity> getUserEntityList() {
+        return userEntityList;
+    }
+
+    public void setUserEntityList(List<UserEntity> userEntityList) {
+        this.userEntityList = userEntityList;
+    }
 }
