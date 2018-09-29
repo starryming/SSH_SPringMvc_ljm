@@ -7,18 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa04e1af-fe20-4691-94e0-5081f20478ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/Junit4/JwtTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/learn/jwt/Jwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/learn/jwt/TokenState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SSH_Ljm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SSH_Ljm/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learn/entity/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/learn/entity/RoleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/learn/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/learn/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mark/WEB-INF/classes/com/learn/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/mark/WEB-INF/lib/commons-io-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SSH_Ljm" beforeDir="false" afterPath="$PROJECT_DIR$/SSH_Ljm" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -154,7 +144,7 @@
           <entry key="gitignore" value="1" />
           <entry key="java" value="84" />
           <entry key="jsp" value="6" />
-          <entry key="md" value="3" />
+          <entry key="md" value="5" />
           <entry key="properties" value="3" />
           <entry key="xml" value="22" />
         </counts>
@@ -164,7 +154,7 @@
           <entry key="CLASS" value="11" />
           <entry key="JAVA" value="84" />
           <entry key="JSP" value="6" />
-          <entry key="Markdown" value="3" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="22" />
@@ -175,7 +165,7 @@
           <entry key="dummy" value="2" />
           <entry key="java" value="2458" />
           <entry key="jsp" value="14" />
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
           <entry key="xml" value="400" />
         </counts>
       </usages-collector>
@@ -183,7 +173,7 @@
         <counts>
           <entry key="JAVA" value="2458" />
           <entry key="JSP" value="14" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="400" />
         </counts>
@@ -241,29 +231,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="241" column="31" lean-forward="true" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learn/dao/Support/MyDaoSupport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <entry file="file://$PROJECT_DIR$/SSH_Ljm/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="9" selection-start-column="9" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SSH_Ljm/README.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="703">
-                <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+              <first_editor relative-caret-position="225">
+                <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -327,7 +311,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/SSH_Ljm" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -380,9 +364,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/learn/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/Junit4/JwtTestCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/learn/jwt/Jwt.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SSH_Ljm/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -423,7 +407,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -489,18 +473,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SSH_SpringMvc_ljm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SSH_SpringMvc_ljm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="Support" type="462c0819:PsiDirectoryNode" />
+              <item name="jwt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSH_SpringMvc_ljm" type="b2602c69:ProjectViewProjectNode" />
@@ -565,7 +538,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="ca37af26-8a85-487a-b342-d70dd42513e7" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538208647739" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538208973552" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -752,7 +725,7 @@
       <workItem from="1537923301455" duration="14871000" />
       <workItem from="1538009251227" duration="3424000" />
       <workItem from="1538104301091" duration="1556000" />
-      <workItem from="1538183475048" duration="11797000" />
+      <workItem from="1538183475048" duration="12175000" />
     </task>
     <task id="LOCAL-00001" summary="责任链模式实现请假">
       <created>1536031432833</created>
@@ -788,7 +761,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219490000" />
+    <option name="totallyTimeSpent" value="219868000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1162,20 +1135,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="19">
-            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/main/Junit4/JwtTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#224#254#0" expanded="true" />
+            <element signature="e#1828#1858#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learn/jwt/TokenState.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learn/dao/Support/MyDaoSupport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="74">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
         </state>
       </provider>
     </entry>
@@ -1190,37 +1172,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Junit4/JwtTestCase.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learn/jwt/TokenState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#224#254#0" expanded="true" />
-            <element signature="e#1828#1858#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="241" column="31" lean-forward="true" selection-start-line="241" selection-start-column="31" selection-end-line="241" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learn/dao/Support/MyDaoSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="127">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SSH_Ljm/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="703">
-            <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <first_editor>
+            <caret column="9" selection-start-column="9" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
