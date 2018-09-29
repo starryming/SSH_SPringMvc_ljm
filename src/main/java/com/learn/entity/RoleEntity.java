@@ -16,6 +16,7 @@ public class RoleEntity implements Serializable {
     private int roleId;
     private String role;
 
+    /*采用JsonField 破坏双边关联的 fastjson序列化无限调用*/
     @JSONField(serialize=false)
     private List<UserEntity> userEntityList = new ArrayList<UserEntity>();
 

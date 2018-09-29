@@ -2,6 +2,7 @@ package com.learn.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.learn.entity.UserEntity;
+import com.learn.jwt.Jwt;
 import com.learn.service.UserService;
 import com.learn.utils.MD5Util;
 import com.learn.utils.PageBeanUtil;
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")//Contoller下所有接口统一入口
@@ -88,13 +92,22 @@ public class UserController {
         //登陆时 同时获取uid 为了存入session
         UserEntity userEntity = userService.login(user);
         if(userEntity != null){
+
             System.out.println("session:"+httpSession.getId());
             httpSession.setAttribute("username", user.getUsername());
             httpSession.setAttribute("uid", userEntity.getUid());
-
             System.out.println("session_username:"+httpSession.getAttribute("username"));
             System.out.println("session_uid:"+httpSession.getAttribute("uid"));
 
+            Map<String , Object> payload=new HashMap<String, Object>();
+            Date date = new Date();
+            payload.put("uid", userEntity.getUid());//用户ID
+            payload.put("username",userEntity.getUsername());//用户姓名
+            payload.put("iat", date.getTime());//生成时间
+            payload.put("ext", date.getTime()+1000*60*60*24);//过期时间24小时
+            String token= Jwt.createToken(payload);
+
+            jsonObject.put("token",JSONObject.toJSON(token));
             jsonObject.put("data",JSONObject.toJSON(userEntity));
             jsonObject.put("msgs",JSONObject.toJSON("true"));
             return jsonObject.toJSONString();

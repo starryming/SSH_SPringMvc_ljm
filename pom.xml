@@ -210,6 +210,39 @@
         <!-- 跨域过滤器相关 -->
         <!--跨域请求配置-->
 
+        <!--Jwt-->
+        <!--<dependency>-->
+            <!--<groupId>io.jsonwebtoken</groupId>-->
+            <!--<artifactId>jjwt-api</artifactId>-->
+            <!--<version>0.10.5</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>io.jsonwebtoken</groupId>-->
+            <!--<artifactId>jjwt-impl</artifactId>-->
+            <!--<version>0.10.5</version>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>io.jsonwebtoken</groupId>-->
+            <!--<artifactId>jjwt-jackson</artifactId>-->
+            <!--<version>0.10.5</version>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+        <!--一款开源的成熟的JSON WEB TOKEN 解决方法-->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>4.28</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Jwt-->
+
     </dependencies>
     <build>
         <finalName>mark</finalName>
