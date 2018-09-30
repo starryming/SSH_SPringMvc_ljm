@@ -53,7 +53,25 @@
         <property name="charset" value="UTF-8" />
     </bean>
 
-
+<!--拦截器配置-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/user/*"/>-->
+            <!--<bean class="com.learn.filter.FilterRequest"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
+        <!-- <bean class="com.learn.filter.FilterRequest"/> -->
+        <mvc:interceptor>
+            <!-- 进行拦截：/**表示拦截所有controller -->
+            <mvc:mapping path="/**" />
+            <!-- 不进行拦截 -->
+            <mvc:exclude-mapping path="/user/Login" />
+            <bean class="com.learn.filter.FilterRequest" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!--拦截器配置end-->
 
     <mvc:default-servlet-handler />
 
